@@ -16,35 +16,21 @@
 </div>
 
 <script>
-    var fetch = function (which, fields) {
-
-        $("#list").empty();
-        $.get("http://localhost:3000/makes.json", true)
-        .done( makesJson => {
-            $.get("http://localhost:3000/" + which + ".json", true)
-                .done(json =>{
-                    for (item in json) {
-                        lis = "<li>";
-                        for (field in fields) {
-                            if(fields[field] == 'make_id'){
-                                for(make in makesJson){
-                                    if(makesJson[make]['id'] == json[item][fields[field]]){
-                                        lis += makesJson[make]['name'] + ""
-                                    }
-                                }
-                            }
-                            else{
-                                lis += json[item][fields[field]] + " "
-                            }
-                        }
-                        lis += "</li>";
-                        $("#list").append(lis);
-                    }
-                })
-                .fail(function (json) { console.log("fail") })
-            })
-            .fail(json =>{console.log('you suck')})
-        };
+var fetch = function(which, fields) {
+    $("#list").empty();
+    $.get("http://localhost:3000/" + which + ".json", true)
+    .done(function(json) {
+        for (item in json) {
+            lis = "<li>";
+            for (field in fields) {
+                lis += json[item][fields[field]] + " ";
+            }
+            lis += "</li>";
+            $("#list").append(lis);
+        }
+    })
+    .fail(function(json){ console.log("fail"); })
+};
 </script>
 
 </body>
