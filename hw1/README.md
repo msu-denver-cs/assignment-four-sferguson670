@@ -1,37 +1,23 @@
 # README
-*Assignment 2*:
-    -Add validations to all your models
-    -Add a search in each index function
-    -Write unit tests for all code you create
-    -EC: make searches dynamic using Ajax
+*Assignment 5*:
+    -use assignment 2's JSON API to create a Single Page Application
+    -display everything your app did via HTML in your display
+    -make sure to make all requests via Ajax so that the URL does not change even though the information displayed does
+    -you are not required to upload information, only display it; C/U/D operations via Ajax are extra credit
+
+    -recommended to put .html file in public directory of your application so you don't run into any CORS issues
+    -remember to bring up your browser's web console to help you debug your SPA. you can also use the console.log method to print values to the web console
+
+*IMPORTANT*:
+In order to get the assignment working, I used a firefox extension to bypass the "Cross-Origin Request Blocked: The Same Origin Policy disallows reading the remote resource at ... (Reason: CORS header 'Access-Control-Allow-Origin' missing)."
+
+Firefox extension found here: https://addons.mozilla.org/en-US/firefox/addon/access-control-allow-origin/
+
+Viewed the spa html file through localhost. In command line, navigate to public directory and run the command $php -S localhost:8080, and then in the browser go to http://localhost:8080/jspa.html 
 
 *Structure*:
 Make -> Cars -> Factory -> Parts
 (one)     (many)    (model)     (many)
-
-
-    Validations:
-    -/app/models/car.rb
-    -/app/models/make.rb
-    -/app/models/part.rb
-
-    Added Search:
-    -/config/routes.rb
-    -/app/view/parts/index.html.erb
-    -...
-
-    Wrote Unit Tests:
-    -/test/controllers/parts_controller_test.rb
-    -/test/controllers/makes_controller_test.rb
-    -/test/controllers/cars_controller_test.rb
-    -...
-
-    Commands Used Throughout:
-    $bin/rails db:seed
-    $rails db:migrate
-    $rails test
-    $rails server
-    $rails destroy scaffold __name__
 
 *ROR Info*
 Rails version: 5.2.3
